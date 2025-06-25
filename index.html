@@ -30,14 +30,18 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 36px 28px 32px 28px;
-      max-width: 370px;
+      max-width: 400px;
       margin-top: 48px;
+      width: 98vw;
       text-align: center;
     }
     .logo {
-      width: 300px;
+      width: 260px;
       margin-bottom: 18px;
-      max-width: 80vw;
+      max-width: 70vw;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     h1 {
       font-size: 2rem;
@@ -46,7 +50,7 @@
       font-weight: 700;
     }
     .subtitle {
-      font-size: 1.09rem;
+      font-size: 1.08rem;
       color: #555;
       margin-bottom: 22px;
     }
@@ -89,11 +93,15 @@
       transform: scale(1.05);
     }
     .tips {
-      font-size: 0.96rem;
-      color: #888;
-      margin-top: 14px;
-      line-height: 1.5;
+      background: #f5fff8;
+      border: 1px solid #d2ecd9;
+      border-radius: 12px;
+      padding: 18px 18px 14px 18px;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(21,163,35,0.04);
+      font-size: 1rem;
       text-align: left;
+      line-height: 1.7;
     }
     .version {
       color: var(--primary);
@@ -113,16 +121,18 @@
       font-size: 0.95rem;
       width: 96vw;
     }
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       .container {
         padding: 20px 6vw 18px 6vw;
-        max-width: 96vw;
+        max-width: 98vw;
       }
       .logo {
-        width: 68px;
+        width: 80vw;
+        min-width: 50px;
+        max-width: 90vw;
       }
       h1 {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
       }
       .about-btn {
         width: 90vw;
@@ -131,6 +141,7 @@
       }
       .tips {
         font-size: 0.98rem;
+        padding: 14px 4vw 12px 4vw;
       }
     }
   </style>
@@ -141,23 +152,33 @@
     <h1>CISC KIDS</h1>
     <div class="subtitle">Mobile Reading Comprehension Application</div>
     <div class="version">Latest version: v1.0</div>
-    <a class="download-btn" href="CISC-KIDS-PHIL-IRI-v1.0.1.rar" download>
+    <!-- Replace the href value below with your direct download link! -->
+    <a class="download-btn" href="https://drive.google.com/drive/folders/16UhNDnpQmEo67bc7QPzZUMgO6M6zYPD-?usp=sharing" target="_blank">
       &#128229; Download APK (RAR)
     </a>
     <div>
       <a href="about.html" class="about-btn">About Us</a>
     </div>
     <div class="tips">
-      <strong>How to install:</strong><br>
-      1. Download the <b>RAR</b> file to your device.<br>
-      2. <b>Extract</b> the RAR file using a file manager app (such as <i>RAR</i> or <i>ZArchiver</i> from Google Play) to get the APK file.<br>
-      3. Open the extracted <b>APK</b> file on your Android device.<br>
-      4. If prompted, allow installation from unknown sources.<br><br>
-      <b>Tip:</b> Most Android phones can't open RAR files by default. If you can't extract it, install a free app like <a href="https://play.google.com/store/apps/details?id=com.rarlab.rar" target="_blank" style="color: var(--primary); text-decoration: underline;">RAR</a> or <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver" target="_blank" style="color: var(--primary); text-decoration: underline;">ZArchiver</a> from the Play Store.<br><br>
-       <div style="text-align:center;">
-    Need help? Contact your teacher or 
-    <a href="mailto:cphiliri@gmail.com" style="color: var(--primary);text-decoration:underline;">cphiliri@gmail.com</a>
-  </div>
+      <strong style="color:var(--primary);font-size:1.04em;">How to install:</strong>
+      <ol style="margin: 8px 0 0 22px; padding: 0;">
+        <li>Download the <b>RAR</b> file to your device.</li>
+        <li>Extract the RAR file using a file manager app (<i>RAR</i> or <i>ZArchiver</i> from Google Play) to get the APK file.</li>
+        <li>Open the extracted <b>APK</b> file on your Android device.</li>
+        <li>If prompted, allow installation from unknown sources.</li>
+      </ol>
+      <div style="margin: 12px 0 0 0;">
+        <b style="color:#ba8a00;">Tip:</b> Most Android phones can't open RAR files by default.
+        <br>If you can't extract it, install a free app like 
+        <a href="https://play.google.com/store/apps/details?id=com.rarlab.rar" target="_blank" style="color: var(--primary); text-decoration: underline;">RAR</a>
+        or
+        <a href="https://play.google.com/store/apps/details?id=ru.zdevs.zarchiver" target="_blank" style="color: var(--primary); text-decoration: underline;">ZArchiver</a>
+        from the Play Store.
+      </div>
+      <div style="margin: 14px 0 0 0; text-align:center;">
+        Need help? Contact your teacher or 
+        <a href="mailto:cphiliri@gmail.com" style="color: var(--primary); text-decoration: underline;">cphiliri@gmail.com</a>
+      </div>
     </div>
   </div>
   <div class="footer">
