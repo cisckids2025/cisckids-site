@@ -6,221 +6,358 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="About the CISC KIDS: Mobile Reading Comprehension PHIL-IRI App, Developers, and Acknowledgments">
   <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --primary: #15A323;
+      --primary-dark: #0E7A1C;
       --secondary: #FFD600;
+      --secondary-dark: #E6BE00;
+      --accent: #4CAF50;
       --bg: #f9f9f9;
       --card: #fff;
-      --shadow: 0 4px 24px rgba(21,163,35,0.08);
-      --radius: 18px;
+      --text: #333;
+      --text-light: #666;
+      --shadow: 0 6px 20px rgba(21, 163, 35, 0.12);
+      --shadow-hover: 0 8px 25px rgba(21, 163, 35, 0.18);
+      --radius: 16px;
+      --transition: all 0.3s ease;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: var(--bg);
+      background: linear-gradient(135deg, #f0f9f0 0%, #e6f7ec 100%);
       min-height: 100vh;
       margin: 0;
       font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px;
+      color: var(--text);
     }
+
+    .header {
+      width: 100%;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 20px 0;
+      background: #fff;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(21, 163, 35, 0.1);
+      transition: var(--transition);
+      gap: 8px;
+    }
+
+    .nav-back:hover, .nav-back:focus {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(21, 163, 35, 0.2);
+    }
+
     .about-container {
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 34px 28px 32px 28px;
-      max-width: 500px;
-      margin: 42px auto 30px auto;
-      width: 98vw;
+      padding: 35px 30px;
+      max-width: 600px;
+      width: 100%;
+      transition: var(--transition);
     }
+
+    .about-container:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
     .logo {
-  width: 200px;
-  margin-bottom: 16px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+      width: 160px;
+      margin: 0 auto 20px auto;
+      display: block;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    }
 
     h1 {
       color: var(--primary);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+      text-align: center;
       letter-spacing: 0.5px;
-      text-align: center;
     }
+
     .subtitle {
-      font-size: 1.04rem;
-      color: #555;
-      margin-bottom: 24px;
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 30px;
       text-align: center;
+      line-height: 1.5;
     }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
     .section-title {
       color: var(--primary);
-      font-size: 1.08rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 8px;
-      margin-top: 26px;
-      letter-spacing: 0.2px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    .section-title:first-child {
-      margin-top: 0;
-    }
+
     .section-content {
-      color: #232323;
+      color: var(--text);
       font-size: 1rem;
       line-height: 1.7;
-      margin-bottom: 14px;
       text-align: justify;
     }
+
     .dev-cards {
       display: flex;
-      gap: 24px;
+      gap: 20px;
       flex-wrap: wrap;
       justify-content: center;
-      margin-bottom: 12px;
-      margin-top: 10px;
+      margin: 20px 0;
     }
+
     .dev-card {
       text-align: center;
       background: #f5fff8;
-      border-radius: 11px;
+      border-radius: 12px;
       border: 1px solid #e3f7e9;
-      padding: 12px 14px;
-      width: 145px;
-      min-width: 110px;
-      box-shadow: 0 1px 4px rgba(21,163,35,0.06);
+      padding: 20px 15px;
+      width: 160px;
+      box-shadow: 0 4px 10px rgba(21, 163, 35, 0.08);
+      transition: var(--transition);
     }
+
+    .dev-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(21, 163, 35, 0.15);
+    }
+
     .dev-card img {
-      width: 60px; height: 60px; border-radius: 8px; box-shadow: 0 2px 6px rgba(21,163,35,0.10);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
       object-fit: cover;
+      border: 3px solid var(--primary);
+      box-shadow: 0 4px 8px rgba(21, 163, 35, 0.2);
+      margin-bottom: 12px;
     }
+
     .dev-name {
-      font-weight: 600; font-size: 15px; margin-top: 8px;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: var(--primary-dark);
     }
+
     .dev-role {
-      font-size: 13px; color: gray; margin-top: 1px;
-    }
-    .counterpart-apps {
-      margin-bottom: 10px;
-    }
-    .counterpart-row {
-      display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;
-    }
-    .counterpart-row img {
-      width: 44px; height: 44px; border-radius: 10px;
-    }
-    .counterpart-row:last-child {
-      margin-bottom: 0;
-    }
-    .nav-back {
+      font-size: 14px;
+      color: var(--text-light);
+      background: rgba(255, 214, 0, 0.2);
+      padding: 4px 10px;
+      border-radius: 20px;
       display: inline-block;
-      margin: 0 0 18px 0;
-      background: #fff;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      padding: 10px 28px;
-      font-size: 1rem;
-      border-radius: 9px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 1px 8px rgba(21,163,35,0.06);
-      transition: background 0.18s, color 0.18s, transform 0.18s;
     }
-    .nav-back:hover, .nav-back:focus {
-      background: var(--primary);
-      color: #fff;
-      transform: scale(1.05);
+
+    .counterpart-apps {
+      margin: 20px 0;
     }
-    .footer {
+
+    .counterpart-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      transition: var(--transition);
+    }
+
+    .counterpart-row:hover {
+      background: #f0f9f0;
+      transform: translateX(5px);
+    }
+
+    .counterpart-row img {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .counterpart-row div {
+      flex: 1;
+    }
+
+    .contact-info {
       text-align: center;
-      color: #aaa;
-      font-size: 0.95rem;
-      margin-top: 34px;
-      width: 96vw;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px dashed #e0e0e0;
     }
+
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      width: 100%;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
     @media (max-width: 650px) {
       .about-container {
-        max-width: 99vw;
-        padding: 18px 2vw 18px 2vw;
+        padding: 25px 20px;
       }
+      
       .dev-cards {
         flex-direction: column;
-        gap: 18px;
+        align-items: center;
       }
-      .footer {
-        font-size: 0.93rem;
+      
+      .dev-card {
+        width: 100%;
+        max-width: 250px;
       }
-    }
-    @media (max-width: 480px) {
-      .about-container {
-        padding: 14vw 2vw 12vw 2vw;
-        max-width: 100vw;
+      
+      .counterpart-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
       }
-      .logo {
-        width: 68px;
-      }
+      
       h1 {
-        font-size: 1.13rem;
+        font-size: 1.6rem;
+      }
+      
+      .section-title {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <a href="index.html" class="nav-back">&#8592; Back to Download Page</a>
+  <div class="header">
+    <a href="index.html" class="nav-back">
+      <i class="fas fa-arrow-left"></i> Back to Download
+    </a>
+  </div>
+  
   <div class="about-container">
-    <img src="logo.png" alt="App Logo" class="logo" />
-    <h1>CISC KIDS: Mobile Reading Comprehension PHIL-IRI</h1>
+    <img src="logo.png" alt="CISC KIDS Logo" class="logo">
+    <h1>CISC KIDS: Mobile Reading Comprehension</h1>
     <div class="subtitle">About the Application and Team</div>
 
-    <div class="section-title">About the App</div>
-    <div class="section-content">
-      CISCKID: Mobile Reading Comprehension PHIL-IRI is a student-centered digital learning platform designed to strengthen reading skills among Grade 5 and Grade 6 learners. Built upon the Philippine Informal Reading Inventory (Phil-IRI) framework, the app allows teachers to assess students through pretest and posttest activities.
-      <br><br>
-      With intuitive tools to manage passages, assign quizzes, and monitor progress, the app fosters both silent and oral reading development in a structured yet engaging way.
-    </div>
-
-    <div class="section-title">Acknowledgments & Collaboration</div>
-    <div class="section-content">
-      This project would not have been possible without the invaluable guidance, dedication, and support of our beloved adviser, <b>Professor Gladys S. Ayunar</b>. Her encouragement, wisdom, and unwavering belief in this initiative inspired us to persevere and continually strive for excellence. Her leadership was truly the heart of this achievement.<br><br>
-      We are also deeply grateful to our esteemed professors—Kent Levi Bonifacio, Nathalie Joy G. Casildo, and Jinky G. Marcelo—for their expert guidance, thoughtful feedback, and continued encouragement throughout this journey.<br><br>
-      Our sincere appreciation goes to Leah Culaste Angana, Ph.D., for her vital expertise in the Philippine Informal Reading Inventory (Phil-IRI), which helped shape the app’s development. We also thank Weenkie Jhon A. Marcelo, Ph.D., School Principal of Musuan Integrated School, for his generous support and encouragement.
-    </div>
-
-    <div class="section-title">Developers</div>
-    <div class="dev-cards">
-      <div class="dev-card">
-        <img src="developer1.png" alt="Dan Ephraim R. Macabenlar">
-        <div class="dev-name">Dan Ephraim R. Macabenlar</div>
-        <div class="dev-role">Developer</div>
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-mobile-alt"></i> About the App
       </div>
-      <div class="dev-card">
-        <img src="developer2.png" alt="Angelou C. Lapad">
-        <div class="dev-name">Angelou C. Lapad</div>
-        <div class="dev-role">Developer</div>
+      <div class="section-content">
+        CISC KIDS: Mobile Reading Comprehension PHIL-IRI is a student-centered digital learning platform designed to strengthen reading skills among Grade 5 and Grade 6 learners. Built upon the Philippine Informal Reading Inventory (Phil-IRI) framework, the app allows teachers to assess students through pretest and posttest activities.
+        <br><br>
+        With intuitive tools to manage passages, assign quizzes, and monitor progress, the app fosters both silent and oral reading development in a structured yet engaging way.
       </div>
     </div>
 
-    <div class="section-title">Counterpart Apps in the Series</div>
-    <div class="counterpart-apps">
-      <div class="counterpart-row">
-        <img src="applogo1.2.png" alt="CISC KIDS: Beginning Reading English Fuller">
-        <div>1. <b>CISC KIDS: Beginning Reading English Fuller</b> – integrates phonics, vocabulary building, and alphabet mastery.</div>
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-handshake"></i> Acknowledgments & Collaboration
       </div>
-      <div class="counterpart-row">
-        <img src="applogo1.2.png" alt="CISC KIDS: Marungko Approach Simula sa Pagbasa">
-        <div>2. <b>CISC KIDS: Marungko Approach Simula sa Pagbasa</b> – emphasizes sound recognition through the Marungko method.</div>
+      <div class="section-content">
+        This project would not have been possible without the invaluable guidance, dedication, and support of our beloved adviser, <b>Professor Gladys S. Ayunar</b>. Her encouragement, wisdom, and unwavering belief in this initiative inspired us to persevere and continually strive for excellence. Her leadership was truly the heart of this achievement.
+        <br><br>
+        We are also deeply grateful to our esteemed professors—Kent Levi Bonifacio, Nathalie Joy G. Casildo, and Jinky G. Marcelo—for their expert guidance, thoughtful feedback, and continued encouragement throughout this journey.
+        <br><br>
+        Our sincere appreciation goes to Leah Culaste Angana, Ph.D., for her vital expertise in the Philippine Informal Reading Inventory (Phil-IRI), which helped shape the app's development. We also thank Weenkie Jhon A. Marcelo, Ph.D., School Principal of Musuan Integrated School, for his generous support and encouragement.
       </div>
     </div>
 
-    <div class="section-title">Contact</div>
-    <div class="section-content" style="text-align:center;">
-      Need help or want to reach out?<br>
-      Email: <a href="mailto:cphiliri@gmail.com" style="color: var(--primary);text-decoration:underline;">cphiliri@gmail.com</a>
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-code"></i> Developers
+      </div>
+      <div class="dev-cards">
+        <div class="dev-card">
+          <img src="developer1.png" alt="Dan Ephraim R. Macabenlar">
+          <div class="dev-name">Dan Ephraim R. Macabenlar</div>
+          <div class="dev-role">Developer</div>
+        </div>
+        <div class="dev-card">
+          <img src="developer2.png" alt="Angelou C. Lapad">
+          <div class="dev-name">Angelou C. Lapad</div>
+          <div class="dev-role">Developer</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-cubes"></i> Counterpart Apps in the Series
+      </div>
+      <div class="counterpart-apps">
+        <div class="counterpart-row">
+          <img src="applogo1.png" alt="CISC KIDS: Beginning Reading English Fuller">
+          <div>
+            <b>CISC KIDS: Beginning Reading English Fuller</b> – integrates phonics, vocabulary building, and alphabet mastery for foundational English reading skills.
+          </div>
+        </div>
+        <div class="counterpart-row">
+          <img src="applogo2.png" alt="CISC KIDS: Marungko Approach Simula sa Pagbasa">
+          <div>
+            <b>CISC KIDS: Marungko Approach Simula sa Pagbasa</b> – emphasizes sound recognition through the Marungko method for early Filipino reading development.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">
+        <i class="fas fa-envelope"></i> Contact
+      </div>
+      <div class="contact-info">
+        Need help or want to reach out?<br>
+        Email: <a href="mailto:cphiliri@gmail.com">cphiliri@gmail.com</a>
+      </div>
     </div>
   </div>
+  
   <div class="footer">
-    &copy; 2025 CISCKID. All rights reserved.<br>
+    &copy; 2025 CISC KIDS. All rights reserved.<br>
     For educational use only.
   </div>
 </body>
