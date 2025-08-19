@@ -27,14 +27,15 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, var(--primary-light) 0%, #f0f9f0 100%);
       color: var(--dark);
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     .container {
@@ -72,13 +73,16 @@
       width: 50px;
       height: 50px;
       border-radius: 12px;
-      background: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
+      overflow: hidden;
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .logo-text {
@@ -125,7 +129,7 @@
 
     /* Hero Section */
     .hero {
-      padding: 80px 0;
+      padding: 100px 0;
       background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8f9fa"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23e9f6eb" stroke-width="2"/></svg>');
     }
 
@@ -274,6 +278,8 @@
       transition: var(--transition);
       box-shadow: 0 10px 20px rgba(21, 163, 35, 0.3);
       margin-bottom: 20px;
+      border: none;
+      cursor: pointer;
     }
 
     .download-btn:hover {
@@ -299,6 +305,41 @@
       font-size: 1.2rem;
       margin-bottom: 10px;
       color: var(--primary-dark);
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 0;
+      background: var(--primary-light);
+    }
+
+    .about-container {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-img {
+      width: 300px;
+      height: 300px;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      color: var(--primary);
     }
 
     /* Footer */
@@ -349,7 +390,7 @@
 
     /* Responsive Design */
     @media (max-width: 992px) {
-      .hero-content, .download-container {
+      .hero-content, .download-container, .about-container {
         flex-direction: column;
         text-align: center;
       }
@@ -382,6 +423,8 @@
       
       nav ul {
         gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
 
@@ -391,12 +434,7 @@
         gap: 15px;
       }
       
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .app-image {
+      .app-image, .about-img {
         width: 250px;
         height: 250px;
         font-size: 80px;
@@ -404,6 +442,10 @@
       
       .download-card {
         padding: 30px 20px;
+      }
+      
+      .hero {
+        padding: 60px 0;
       }
     }
   </style>
@@ -414,16 +456,18 @@
     <div class="container">
       <div class="header-content">
         <a href="#" class="logo">
-          <div class="logo-img">CK</div>
+          <div class="logo-img">
+            <img src="https://placehold.co/50x50/15A323/FFFFFF?text=CK" alt="CISC KIDS Logo">
+          </div>
           <div class="logo-text">CISC <span>KIDS</span></div>
         </a>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Download</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -431,7 +475,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
@@ -451,6 +495,53 @@
     </div>
   </section>
 
+  <!-- Features Section -->
+  <section class="download-section" id="features">
+    <div class="container">
+      <h2>Key <span>Features</span></h2>
+      <p class="section-desc">Our app provides comprehensive tools for improving reading comprehension skills</p>
+      
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h3>Easy to Use</h3>
+            <p>Intuitive interface for all users</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3>Phil-IRI Framework</h3>
+            <p>Based on established reading assessment</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div>
+            <h3>Progress Tracking</h3>
+            <p>Monitor student development</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <div>
+            <h3>Mobile Access</h3>
+            <p>Learn anytime, anywhere</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Download Section -->
   <section class="download-section" id="download">
     <div class="container">
@@ -458,45 +549,6 @@
         <div class="download-info">
           <h2>Download <span>CISC KIDS</span> App</h2>
           <p class="section-desc">Get started with our innovative reading comprehension platform designed for both students and educators.</p>
-          
-          <div class="features">
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div>
-                <h3>Easy to Use</h3>
-                <p>Intuitive interface for all users</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <div>
-                <h3>Phil-IRI Framework</h3>
-                <p>Based on established reading assessment</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div>
-                <h3>Progress Tracking</h3>
-                <p>Monitor student development</p>
-              </div>
-            </div>
-            <div class="feature">
-              <div class="feature-icon">
-                <i class="fas fa-mobile-alt"></i>
-              </div>
-              <div>
-                <h3>Mobile Access</h3>
-                <p>Learn anytime, anywhere</p>
-              </div>
-            </div>
-          </div>
         </div>
         
         <div class="download-card">
@@ -522,8 +574,27 @@
     </div>
   </section>
 
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-container">
+        <div class="about-text">
+          <h2>About <span>CISC KIDS</span></h2>
+          <p class="section-desc">CISC Mobile Reading Comprehension is a student-centered digital learning platform designed to strengthen reading skills among Grade 5 and Grade 6 learners.</p>
+          <p>Built upon the Philippine Informal Reading Inventory (Phil-IRI) framework, the app allows teachers to assess students through pretests and posttests activities.</p>
+          <p>With intuitive tools to manage passages, assign quizzes, and monitor progress, the app fosters both silent and oral reading development in a structured yet engaging way.</p>
+        </div>
+        <div class="about-image">
+          <div class="about-img">
+            <i class="fas fa-info-circle"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer>
+  <footer id="contact">
     <div class="container">
       <div class="footer-content">
         <div class="footer-column">
@@ -534,10 +605,10 @@
         <div class="footer-column">
           <h3>Quick Links</h3>
           <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Download</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#about">About Us</a></li>
           </ul>
         </div>
         
@@ -567,6 +638,25 @@
   </footer>
 
   <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a, .download-btn[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        if(this.getAttribute('href') === '#') return;
+        
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
     // Simple animation for the download button
     document.addEventListener('DOMContentLoaded', function() {
       const downloadBtn = document.querySelector('.download-btn');
