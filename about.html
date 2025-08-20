@@ -71,14 +71,14 @@
     .logo-img {
       width: 50px;
       height: 50px;
-      border-radius: 12px;
-      background: var(--primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
+    }
+
+    .logo-img img {
+      max-width: 100%;
+      max-height: 100%;
     }
 
     .logo-text {
@@ -123,9 +123,17 @@
       width: 100%;
     }
 
+    nav a.active {
+      color: var(--primary);
+    }
+
+    nav a.active::after {
+      width: 100%;
+    }
+
     /* Page Header */
     .page-header {
-      padding: 60px 0 40px;
+      padding: 80px 0 40px;
       text-align: center;
     }
 
@@ -155,9 +163,9 @@
     .about-section {
       background: var(--white);
       border-radius: 16px;
-      box-shadow: var(--shadow);
       padding: 40px;
       margin-bottom: 40px;
+      box-shadow: var(--shadow);
       transition: var(--transition);
     }
 
@@ -182,6 +190,29 @@
       line-height: 1.8;
     }
 
+    /* Android Focus Section */
+    .android-focus {
+      padding: 30px 0;
+      text-align: center;
+      background: var(--primary-light);
+      border-radius: 16px;
+      margin: 30px 0;
+    }
+
+    .android-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .android-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
     /* Developers Section */
     .developers {
       display: grid;
@@ -193,7 +224,7 @@
     .developer-card {
       background: var(--primary-light);
       border-radius: 16px;
-      padding: 25px;
+      padding: 30px;
       text-align: center;
       transition: var(--transition);
       border: 1px solid rgba(21, 163, 35, 0.1);
@@ -204,14 +235,19 @@
       box-shadow: 0 12px 25px rgba(21, 163, 35, 0.15);
     }
 
-    .developer-img {
+    .developer-image {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary);
       margin: 0 auto 20px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      border: 4px solid var(--primary);
+    }
+
+    .developer-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .developer-name {
@@ -353,14 +389,14 @@
       nav ul {
         gap: 15px;
       }
-    }
-
-    @media (max-width: 576px) {
+      
       .header-content {
         flex-direction: column;
         gap: 15px;
       }
-      
+    }
+
+    @media (max-width: 576px) {
       nav ul {
         flex-wrap: wrap;
         justify-content: center;
@@ -373,6 +409,11 @@
       .section-title {
         font-size: 1.5rem;
       }
+      
+      .app-card {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -382,7 +423,9 @@
     <div class="container">
       <div class="header-content">
         <a href="index.html" class="logo">
-          <div class="logo-img">CK</div>
+          <div class="logo-img">
+            <img src="logo.png" alt="CISC KIDS Logo">
+          </div>
           <div class="logo-text">CISC <span>KIDS</span></div>
         </a>
         <nav>
@@ -401,21 +444,32 @@
   <section class="page-header">
     <div class="container">
       <h1 class="page-title">About <span>CISC KIDS</span></h1>
-      <p class="page-subtitle">Learn about our mission, team, and the educational vision behind our reading comprehension platform</p>
+      <p class="page-subtitle">Learn about our mission, team, and the educational vision behind our Android reading comprehension platform</p>
     </div>
   </section>
 
   <!-- About Content -->
   <section class="about-content">
     <div class="container">
+      <!-- Android Focus Section -->
+      <div class="android-focus">
+        <div class="android-content">
+          <div class="android-icon">
+            <i class="fab fa-android"></i>
+          </div>
+          <h2>Designed Exclusively for Android</h2>
+          <p>Our applications are optimized for Android devices, providing the best experience on tablets and phones for young learners.</p>
+        </div>
+      </div>
+
       <!-- About the App -->
       <div class="about-section">
         <h2 class="section-title">
           <i class="fas fa-mobile-alt"></i> About the App
         </h2>
         <div class="section-content">
-          <p>CISC Mobile Reading Comprehension is a student-centered digital learning platform designed to strengthen reading skills among Grade 5 and Grade 6 learners. Built upon the Philippine Informal Reading Inventory (Phil-IRI) framework, the app allows teachers to assess students through pretests and posttests activities.</p>
-          <p>With intuitive tools to manage passages, assign quizzes, and monitor progress, the app fosters both silent and oral reading development in a structured yet engaging way.</p>
+          <p>CISC Mobile Reading Comprehension is a student-centered Android application designed to strengthen reading skills among Grade 5 and Grade 6 learners. Built upon the Philippine Informal Reading Inventory (Phil-IRI) framework, the app allows teachers to assess students through pretests and posttests activities.</p>
+          <p>With intuitive tools to manage passages, assign quizzes, and monitor progress, the Android app fosters both silent and oral reading development in a structured yet engaging way.</p>
         </div>
       </div>
 
@@ -438,19 +492,21 @@
         </h2>
         <div class="developers">
           <div class="developer-card">
-            <div class="developer-img" style="background: #4CAF50; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem;">
-              <i class="fas fa-user"></i>
+            <div class="developer-image">
+              <img src="developer1.png" alt="Dan Ephraim R. Macabenlar">
             </div>
             <h3 class="developer-name">Dan Ephraim R. Macabenlar</h3>
             <div class="developer-role">Developer/Researcher</div>
+            <p>Android application developer focused on creating engaging educational experiences.</p>
           </div>
           
           <div class="developer-card">
-            <div class="developer-img" style="background: #FFD600; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem;">
-              <i class="fas fa-user"></i>
+            <div class="developer-image">
+              <img src="developer2.png" alt="Angelou C. Lapad">
             </div>
             <h3 class="developer-name">Angelou C. Lapad</h3>
             <div class="developer-role">Researcher</div>
+            <p>Education specialist researching effective reading comprehension strategies for mobile learning.</p>
           </div>
         </div>
       </div>
@@ -458,9 +514,9 @@
       <!-- Counterpart Apps -->
       <div class="about-section">
         <h2 class="section-title">
-          <i class="fas fa-cubes"></i> Counterpart Apps in the Series
+          <i class="fas fa-cubes"></i> Android Apps in the Series
         </h2>
-        <p class="section-content">The CISC Mobile Reading Comprehension app is part of the CISC KIDS series, which includes these complementary educational apps:</p>
+        <p class="section-content">The CISC Mobile Reading Comprehension app is part of the CISC KIDS Android series, which includes these complementary educational apps:</p>
         
         <div class="counterpart-apps">
           <div class="app-card">
@@ -504,7 +560,7 @@
       <div class="footer-content">
         <div class="footer-column">
           <h3>CISC KIDS</h3>
-          <p>A mobile reading comprehension platform designed for educational excellence.</p>
+          <p>Android reading comprehension platform designed for educational excellence.</p>
         </div>
         
         <div class="footer-column">
