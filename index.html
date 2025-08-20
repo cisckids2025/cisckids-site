@@ -317,10 +317,83 @@
             margin-bottom: 20px;
         }
 
+        /* Android Focus Section */
+        .android-focus {
+            padding: 80px 0;
+            text-align: center;
+            background: var(--primary-light);
+        }
+
+        .android-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .android-icon {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Developers Section */
+        .developers-section {
+            padding: 80px 0;
+        }
+
+        .developers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .developer-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .developer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .developer-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+        }
+
+        .developer-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .developer-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .developer-card p {
+            color: var(--gray);
+        }
+
         /* Download Section */
         .download {
             padding: 80px 0;
             text-align: center;
+            background: var(--white);
         }
 
         .download-options {
@@ -329,6 +402,18 @@
             gap: 20px;
             margin-top: 40px;
             flex-wrap: wrap;
+        }
+
+        .android-btn {
+            background: #3DDC84;
+            color: #000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .android-btn:hover {
+            background: #2AB66B;
         }
 
         /* Footer */
@@ -452,7 +537,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Empowering Young Minds Through <span>Reading</span></h1>
-                <p class="hero-subtitle">CISC KIDS offers innovative mobile applications designed to enhance reading comprehension and literacy skills for elementary students.</p>
+                <p class="hero-subtitle">CISC KIDS offers innovative Android applications designed to enhance reading comprehension and literacy skills for elementary students.</p>
                 <div class="hero-buttons">
                     <a href="#download" class="btn">Download Now</a>
                     <a href="about.html" class="btn btn-secondary">Learn More</a>
@@ -466,7 +551,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose <span>CISC KIDS</span></h2>
-                <p>Our applications are designed with both students and educators in mind, providing effective tools for reading development</p>
+                <p>Our Android applications are designed with both students and educators in mind, providing effective tools for reading development</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -480,8 +565,8 @@
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Mobile Learning</h3>
-                    <p>Access reading materials and assessments anytime, anywhere on mobile devices</p>
+                    <h3>Android Optimized</h3>
+                    <p>Specifically designed for Android devices with intuitive touch interfaces for children</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -494,12 +579,26 @@
         </div>
     </section>
 
+    <!-- Android Focus Section -->
+    <section class="android-focus">
+        <div class="container">
+            <div class="android-content">
+                <div class="android-icon">
+                    <i class="fab fa-android"></i>
+                </div>
+                <h2>Designed Exclusively for Android</h2>
+                <p>Our applications are optimized for Android devices, providing the best experience on tablets and phones for young learners.</p>
+                <p>With touch-friendly interfaces and Android-specific features, children can easily navigate and engage with our educational content.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Apps Section -->
     <section class="apps">
         <div class="container">
             <div class="section-title">
-                <h2>Our <span>Applications</span></h2>
-                <p>Discover the CISC KIDS series of educational mobile applications</p>
+                <h2>Our <span>Android Applications</span></h2>
+                <p>Discover the CISC KIDS series of educational Android applications</p>
             </div>
             <div class="apps-grid">
                 <div class="app-card">
@@ -509,7 +608,7 @@
                     <div class="app-info">
                         <h3>Reading Comprehension</h3>
                         <p>Enhance reading skills with Phil-IRI based assessments for Grade 5 and Grade 6 learners.</p>
-                        <a href="#download" class="btn">Download</a>
+                        <a href="#download" class="btn">Download for Android</a>
                     </div>
                 </div>
                 <div class="app-card">
@@ -521,7 +620,7 @@
                     <div class="app-info">
                         <h3>Beginning Reading English Fuller</h3>
                         <p>Integrates phonics, vocabulary building, and alphabet mastery for foundational English reading skills.</p>
-                        <a href="#download" class="btn">Download</a>
+                        <a href="#download" class="btn">Download for Android</a>
                     </div>
                 </div>
                 <div class="app-card">
@@ -533,7 +632,7 @@
                     <div class="app-info">
                         <h3>Marungko Approach Simula sa Pagbasa</h3>
                         <p>Emphasizes sound recognition through the Marungko method for early Filipino reading development.</p>
-                        <a href="#download" class="btn">Download</a>
+                        <a href="#download" class="btn">Download for Android</a>
                     </div>
                 </div>
             </div>
@@ -541,30 +640,32 @@
     </section>
 
     <!-- Developers Section -->
-    <section class="features">
+    <section class="developers-section">
         <div class="container">
             <div class="section-title">
                 <h2>Meet Our <span>Team</span></h2>
-                <p>Passionate educators and developers dedicated to improving literacy</p>
+                <p>Passionate educators and developers dedicated to improving literacy through Android technology</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: #4CAF50; color: white;">
-                        <i class="fas fa-user"></i>
+            <div class="developers-grid">
+                <div class="developer-card">
+                    <div class="developer-image">
+                        <img src="developer1.png" alt="Dan Ephraim R. Macabenlar">
                     </div>
                     <h3>Dan Ephraim R. Macabenlar</h3>
                     <p>Developer/Researcher</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: #FFD600; color: white;">
-                        <i class="fas fa-user"></i>
+                <div class="developer-card">
+                    <div class="developer-image">
+                        <img src="developer2.png" alt="Angelou C. Lapad">
                     </div>
                     <h3>Angelou C. Lapad</h3>
                     <p>Researcher</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: #15A323; color: white;">
-                        <i class="fas fa-users"></i>
+                <div class="developer-card">
+                    <div class="developer-image">
+                        <div style="width: 100%; height: 100%; background: #15A323; display: flex; align-items: center; justify-content: center; color: white; font-size: 2.5rem;">
+                            <i class="fas fa-users"></i>
+                        </div>
                     </div>
                     <h3>Advisors & Support Team</h3>
                     <p>Expert guidance from education professionals</p>
@@ -578,12 +679,11 @@
         <div class="container">
             <div class="section-title">
                 <h2>Download <span>Now</span></h2>
-                <p>Get started with CISC KIDS applications today</p>
+                <p>Get started with CISC KIDS Android applications today</p>
             </div>
             <div class="download-options">
-                <a href="#" class="btn"><i class="fab fa-google-play"></i> Google Play</a>
-                <a href="#" class="btn"><i class="fab fa-apple"></i> App Store</a>
-                <a href="#" class="btn"><i class="fas fa-download"></i> Direct Download</a>
+                <a href="#" class="btn android-btn"><i class="fab fa-google-play"></i> Google Play Store</a>
+                <a href="#" class="btn"><i class="fas fa-download"></i> Direct APK Download</a>
             </div>
         </div>
     </section>
@@ -594,7 +694,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>CISC KIDS</h3>
-                    <p>A mobile reading comprehension platform designed for educational excellence.</p>
+                    <p>Android reading comprehension platform designed for educational excellence.</p>
                 </div>
                 
                 <div class="footer-column">
